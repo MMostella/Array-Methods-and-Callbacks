@@ -30,13 +30,22 @@ hint - you should be looking at the stage key inside of the objects
 // function getFinals(data) {
 //     const newArray = data.filter(item => item.Stage === "Final")};
 
-function getFinals(data) {
-    const newArray = data.filter(function(item) {
-        return item.Stage === "Final"});
-        return newArray;
-    };
+// function getFinals(data) {
+//     const newArray = data.filter(function(item) {
+//         return item.Stage === "Final"});
+//         return newArray;
+//     };
     
 
+// function getFinals(data){
+//     const newArray = data.filter(item => item.Stage === "Final");
+//     return newArray;
+// }
+
+
+function getFinals(data){
+    return data.filter(item => item.Stage === "Final");
+}
 
 // console.log('Task 2:', getFinals(fifaData));
 
@@ -52,12 +61,20 @@ Use the higher-order function called getYears to do the following:
 //     //map finals cb to get all of the years (item.Years)
 // };
 
-function getYears(data, getFinalscb) {
-    const finalYears = getFinalscb(data).map(function(item) {
-        return item.Year; });
-    return finalYears;
-};
+// function getYears(data, getFinalscb) {
+//     const finalYears = getFinalscb(data).map(function(item) {
+//         return item.Year; });
+//     return finalYears;
+// };
 
+// function getYears(data, getFinalscb){
+//     const finalYears = getFinalscb(data).map(item => item.Year);
+//     return finalYears;
+// }
+
+function getYears(data, getFinalscb){
+    return getFinalscb(data).map(item => item.Year);
+}
 
 // console.log('Task 3:', getYears(fifaData, getFinals));
 
@@ -80,7 +97,16 @@ Use the higher-order function getWinners to do the following:
 //     return winners;
 // }
 
-
+// function getWinners(data, getFinalscb){
+//     const winners = getFinalscb(data).map(item => {
+//         if (item['Home Team Goals'] > item['Away Team Goals']){
+//             return item['Home Team Name'];
+//         } else {
+//             return item['Away Team Name']
+//         }
+//     })
+//     return winners;
+// }
 
 
 function getWinners(data, getFinalscb){
