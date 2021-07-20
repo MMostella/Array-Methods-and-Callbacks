@@ -26,13 +26,13 @@ Use getFinals to do the following:
 
 hint - you should be looking at the stage key inside of the objects
 */
-//data - fifaData as argument
-function getFinals() {
-   // filter for stage of final
-   //return array
+
+function getFinals(data) {
+    const newArray = data.filter(item => item.Stage === 'Final');
+   return newArray;
 }
 
-// data
+console.log('Task 2:', getFinals(fifaData));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
@@ -84,7 +84,7 @@ Use the higher order function getAverageGoals to do the following:
  1. Receive the callback function getFinals from task 2 ensure you pass in the data as an argument
  2. Return the the average number of the total home team goals and away team goals scored per match and round to the second decimal place. 
  // look up .toFixed()
- 
+
  (Hint: use .reduce and do this in 2 steps) 
  
  Example of invocation: getAverageGoals(getFinals(fifaData));
